@@ -1,5 +1,5 @@
 /*
-练习1.6：解释下面程序是否合法。
+* 练习1.6：解释下面程序是否合法。
 */
 
 #include <iostream>
@@ -23,7 +23,6 @@ ex1_6.cpp:11:6: 错误：expected primary-expression before ‘<<’ token
 ex1_6.cpp:12:6: 错误：expected primary-expression before ‘<<’ token
       << " is " << v1 + v2 << std::endl;
       ^
-
 
 */
 
