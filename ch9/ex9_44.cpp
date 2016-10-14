@@ -56,7 +56,7 @@ void replaceOldValWithNewVal_2(string &s, const string &oldVal, const string &ne
 		{
 			cur = s.erase(cur, cur + oldVal.size());
 			cur = s.insert(cur, newVal.cbegin(), newVal.cend());		// 插入位置之后的迭代器失效，需要重新加载
-			cur += newVal.size();
+			cur += newVal.size();		// 跳过刚插入的字符串
 		}
 		else
 			++cur;
