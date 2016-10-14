@@ -14,13 +14,15 @@ void replaceOldValWithNewVal_3(string &s, const string &oldVal, const string &ne
 
 int main()
 {
-	string s("even tho you are just a little girl, I love your. HAHA, THO!");
-	string oldVal("tho");
-	string newVal("though");
+	string s("even though though are just a little girl, I love your. HAHA, THO!");
+	string oldVal("though");
+	string newVal("tho");
 	replaceOldValWithNewVal_2(s, oldVal, newVal);
 	cout << s << endl;
+	s = "even though though are just a little girl, I love your. HAHA, THO!";
 	replaceOldValWithNewVal(s, oldVal, newVal);
 	cout << s << endl;
+	s = "even though though are just a little girl, I love your. HAHA, THO!";
 	replaceOldValWithNewVal_3(s, oldVal, newVal);
 	cout << s << endl;
 
@@ -71,7 +73,7 @@ void replaceOldValWithNewVal_3(string &s, const string &oldVal, const string &ne
 		if(oldVal == s.substr(pos, oldVal.size()))
 		{
 			s.replace(pos, oldVal.size(), newVal);
-			pos += oldVal.size();
+			pos += newVal.size();
 		}
 		else
 			++pos;
@@ -85,6 +87,5 @@ even though you are just a little girl, I love your. HAHA, THO!
 even thoughugh you are just a little girl, I love your. HAHA, THO!
 even thoughughugh you are just a little girl, I love your. HAHA, THO!
 请按任意键继续. . .
-
 
 */
