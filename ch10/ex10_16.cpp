@@ -1,5 +1,5 @@
 /*
-*	练习 10.16：使用 lamdba 编写你自己版泵的 biggies。
+*	练习 10.16：使用 lamdba 编写你自己版本的 biggies。
 */
 
 #include <vector>
