@@ -33,22 +33,8 @@ int main()
 
 /*
 
-input.txt:
-
-Hello World!
-Keep Moving...
-What a Nice day!
-Aha!
-
-*/
-
-
-/*
-
-Hello World!
-Keep Moving...
-What a Nice day!
-Aha!
+Hello World
+Dark Soull
 Press any key to continue . . .
 
 */
