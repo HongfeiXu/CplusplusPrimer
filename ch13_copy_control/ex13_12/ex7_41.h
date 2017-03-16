@@ -1,5 +1,6 @@
 ﻿/*
 * 练习7.26：将 Sales_data::avg_price 定义成内联函数。
+* destructor added
 */
 
 #ifndef EX7_41_H
@@ -23,13 +24,10 @@ class Sales_data {
 public:
 	// 非委托构造函数使用对应的实参初始化成员
 	Sales_data (const string &s, unsigned n, double p) :
-		bookNo (s), units_sold (n), revenue (p * n) 
-	{
-		cout << "非委托构造函数" << endl;
-	}
+		bookNo (s), units_sold (n), revenue (p * n) { }
 	// 其余构造函数全部委托给另一个构造函数
-	Sales_data () : Sales_data ("", 0, 0) { cout << "默认构造函数" << endl; }
-	Sales_data (string s) : Sales_data (s, 0, 0) { cout << "string" << endl; }
+	Sales_data () : Sales_data ("", 0, 0) { }
+	Sales_data (string s) : Sales_data (s, 0, 0) { }
 	Sales_data (istream &is) : Sales_data ()
 	{ 
 		read (is, *this); 
@@ -37,6 +35,7 @@ public:
 	}
 	std::string isbn () const { return this->bookNo; }
 	Sales_data& combine (const Sales_data&);
+	~Sales_data() { cout << "destructor" << endl; }
 private:
 	double avg_price () const;
 private:
