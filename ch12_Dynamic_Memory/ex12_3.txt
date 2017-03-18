@@ -1,0 +1,21 @@
+转载自：https://www.douban.com/group/topic/61573279/
+
+先说一下，我不加const 版本的push_back的原因：
+
+OO的三大理念：抽象，继承和多态。
+此处只涉及抽象，或称封装。用户无需关心class的实现细节，只要调用成员函数即可。假使我们给出了const版本的push_back，那么当用户定义一个【const wy_StrBlob对象my_StrBlob】时，并调用push_back:
+
+my_StrBlob.push_back(something)；
+
+--这行代码会被编译通过，并把something装进my_StrBlob。
+----从class的语法细节看这是没问题的，因为私有成员‘data’并没有被改变，改变的是data指向的容器。
+----从用户程序员的角度就奇葩了，“我明明定义的是const对象，怎么还能执行push_back?”，即@pezy所称的【反人类】。
+----另外，std::string，std::vector，std::deque都只定义了非const版本。const的string或者vector执行push_back的时候一定会报错。跟std保持一致性也是不加const的一证。
+
+综上，如果const版push_back加上去的话，坏处有：
+1、迫使用户程序员去了解class的实现细节，违反OO原则
+2、违反std的使用习惯。
+
+故，不加。
+
+
