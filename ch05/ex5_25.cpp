@@ -28,7 +28,7 @@ int main ()
 			char c;
 			cin >> c;
 			if (!cin || c == 'n')
-				break;		// 挑出while循环
+				break;		// 跳出while循环
 		}
 	}
 
