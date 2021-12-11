@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 #include <iostream>
 #include <vector>
@@ -6,7 +6,7 @@
 
 using namespace std;
 
-// ÀàĞÍÄ£°å²ÎÊı
+// ç±»å‹æ¨¡æ¿å‚æ•°
 template <typename T>
 int compare(const T& v1, const T& v2)
 {
@@ -17,28 +17,28 @@ int compare(const T& v1, const T& v2)
 	return 0;
 }
 
-// ·ÇÀàĞÍÄ£°å²ÎÊı
+// éç±»å‹æ¨¡æ¿å‚æ•°
 template<unsigned N, unsigned M>
-int compare(const char(&p1)[N], const char(&p2)[M])		// // ´«ÈëµÄ±ØĞëÊÇ³£Á¿±í´ïÊ½
+int compare(const char(&p1)[N], const char(&p2)[M])		// ä¼ å…¥çš„å¿…é¡»æ˜¯å¸¸é‡è¡¨è¾¾å¼
 {
-	cout << N << " " << M << endl;	// ±àÒëÆÚÍÆ¶Ï³ö N ºÍ M µÄÖµ
+	cout << N << " " << M << endl;	// ç¼–è¯‘æœŸæ¨æ–­å‡º N å’Œ M çš„å€¼
 	return strcmp(p1, p2);
 }
 
-// »ùÓÚ·ÇÀàĞÍÄ£°å²ÎÊıµÄÓ¦ÓÃ
+// åŸºäºéç±»å‹æ¨¡æ¿å‚æ•°çš„åº”ç”¨
 
 /// <summary>
-/// ´òÓ¡Êı×éÄÚÈİ
-/// ¿É´¦ÀíÈÎÒâ´óĞ¡¡¢ÔªËØÀàĞÍµÄÊı×é
+/// æ‰“å°æ•°ç»„å†…å®¹
+/// å¯å¤„ç†ä»»æ„å¤§å°ã€å…ƒç´ ç±»å‹çš„æ•°ç»„
 /// </summary>
 template<typename T, unsigned N>
-void print(const T(&arr)[N])	// Êı×éÒıÓÃĞÎ²Î
+void print(const T(&arr)[N])	// æ•°ç»„å¼•ç”¨å½¢å‚
 {
 	copy(std::cbegin(arr), std::cend(arr), ostream_iterator<T>(cout, " "));
 }
 
 /// <summary>
-/// ·µ»Ø¸ø¶¨Êı×é´óĞ¡£¬·µ»ØµÄÊÇ³£Á¿±í´ïÊ½£¨±àÒëÆÚ¾ÍÄÜµÃµ½½á¹û£©
+/// è¿”å›ç»™å®šæ•°ç»„å¤§å°ï¼Œè¿”å›çš„æ˜¯å¸¸é‡è¡¨è¾¾å¼ï¼ˆç¼–è¯‘æœŸå°±èƒ½å¾—åˆ°ç»“æœï¼‰
 /// </summary>
 template <typename T, unsigned N>
 constexpr unsigned getArraySize(const T(&arr)[N])
@@ -53,7 +53,7 @@ void test()
 	float fb = 1.3f;
 	cout << compare(fa, fb) << endl;
 
-	cout << compare("hi", "mom") << endl;	// ´«ÈëµÄ±ØĞëÊÇ³£Á¿±í´ïÊ½
+	cout << compare("hi", "mom") << endl;	// ä¼ å…¥çš„å¿…é¡»æ˜¯å¸¸é‡è¡¨è¾¾å¼
 
 	int arr[] = { 1,2,3,4,5,6 };
 	print(arr);
@@ -61,8 +61,8 @@ void test()
 
 	cout << getArraySize(arr) << endl;
 	
-	// Ö»ÓĞµ± getArraySize ·µ»Ø³£Á¿±í´ïÊ½Ê±£¬ÕâÀï²ÅÊÇ¶ÔµÄ£»
-	// ·ñÔò±¨´í£º¡°¶ÔÎ´¶¨ÒåµÄº¯Êı»òÎªÎ´ÉùÃ÷Îª¡°constexpr¡±µÄº¯ÊıµÄµ÷ÓÃµ¼ÖÂÁË¹ÊÕÏ¡±
+	// åªæœ‰å½“ getArraySize è¿”å›å¸¸é‡è¡¨è¾¾å¼æ—¶ï¼Œè¿™é‡Œæ‰æ˜¯å¯¹çš„ï¼›
+	// å¦åˆ™æŠ¥é”™ï¼šâ€œå¯¹æœªå®šä¹‰çš„å‡½æ•°æˆ–ä¸ºæœªå£°æ˜ä¸ºâ€œconstexprâ€çš„å‡½æ•°çš„è°ƒç”¨å¯¼è‡´äº†æ•…éšœâ€
 	int arrb[getArraySize(arr)];
 	print(arrb);
 }
@@ -75,7 +75,7 @@ void test()
 1 2 3 4 5 6
 6
 
-E:\BooksLearn\CPP\CplusplusPrimer\project\CplusplusPrimer\Debug\CplusplusPrimer.exe (½ø³Ì 49400)ÒÑÍË³ö£¬´úÂëÎª 0¡£
-°´ÈÎÒâ¼ü¹Ø±Õ´Ë´°¿Ú. . .
+E:\BooksLearn\CPP\CplusplusPrimer\project\CplusplusPrimer\Debug\CplusplusPrimer.exe (è¿›ç¨‹ 49400)å·²é€€å‡ºï¼Œä»£ç ä¸º 0ã€‚
+æŒ‰ä»»æ„é”®å…³é—­æ­¤çª—å£. . .
 
 */

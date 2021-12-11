@@ -1,8 +1,8 @@
-# ¹¤³ÌËµÃ÷
+ï»¿# å·¥ç¨‹è¯´æ˜Ž
 
-°ÑÊé±¾ÖÐµÄÒ»Ð©¾­µäÀý×ÓÐ´ÔÚÕâÀï£¬·½±ãºóÃæ²é¿´¡£
+æŠŠä¹¦æœ¬ä¸­çš„ä¸€äº›ç»å…¸ä¾‹å­å†™åœ¨è¿™é‡Œï¼Œæ–¹ä¾¿åŽé¢æŸ¥çœ‹ã€‚
 
 
 ## Ch16 Templates and Generic Programming
 
-- ·ÇÀàÐÍÄ£°å²ÎÊýµÄÓ¦ÓÃ `nontype_parameter.h`
+- éžç±»åž‹æ¨¡æ¿å‚æ•°çš„åº”ç”¨ `nontype_parameter.h`
