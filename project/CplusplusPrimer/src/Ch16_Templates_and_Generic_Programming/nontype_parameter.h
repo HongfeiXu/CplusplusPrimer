@@ -64,4 +64,18 @@ void test()
 	// 只有当 getArraySize 返回常量表达式时，这里才是对的；
 	// 否则报错：“对未定义的函数或为未声明为“constexpr”的函数的调用导致了故障”
 	int arrb[getArraySize(arr)];
+	print(arrb);
 }
+
+/*
+
+-1
+3 4
+-1
+1 2 3 4 5 6
+6
+
+E:\BooksLearn\CPP\CplusplusPrimer\project\CplusplusPrimer\Debug\CplusplusPrimer.exe (进程 49400)已退出，代码为 0。
+按任意键关闭此窗口. . .
+
+*/
