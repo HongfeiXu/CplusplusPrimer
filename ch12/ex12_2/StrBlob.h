@@ -58,13 +58,13 @@ const string &StrBlob::front() const
 string &StrBlob::back()
 {
 	check(0, "back on empty StrBlob");
-	return data->back;
+	return data->back();
 }
 
 const string &StrBlob::back() const
 {
 	check(0, "back on empty StrBlob");
-	return data->back;
+	return data->back();
 }
 
 void StrBlob::pop_back()

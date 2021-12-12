@@ -8,6 +8,9 @@
     <Filter Include="src\Ch16_Templates_and_Generic_Programming">
       <UniqueIdentifier>{9fc00dff-b2b9-4c65-8bb8-5b15f0b872a5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Ch06_Functions">
+      <UniqueIdentifier>{dc4d2af9-a24a-4d75-bf4d-3bfcf1111d01}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -17,6 +20,15 @@
   <ItemGroup>
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\nontype_parameter.h">
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch06_Functions\variable_param_example.h">
+      <Filter>src\Ch06_Functions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\blob.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

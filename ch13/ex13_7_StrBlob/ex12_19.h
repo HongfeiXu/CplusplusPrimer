@@ -11,6 +11,7 @@
 #include <vector>
 #include <memory>
 #include <initializer_list>
+#include <stdexcept>
 
 using namespace std;
 
