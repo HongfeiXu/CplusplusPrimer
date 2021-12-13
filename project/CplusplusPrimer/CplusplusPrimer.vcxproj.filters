@@ -30,6 +30,9 @@
     <ClInclude Include="src\util.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\screen.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />

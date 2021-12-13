@@ -13,26 +13,16 @@ using namespace std;
 // 前置声明
 template<typename> class BlobPtr;
 template<typename> class Blob;
-template<typename T>
-bool operator==(const Blob<T>&, const Blob<T>&);
+template<typename T> bool operator==(const Blob<T>&, const Blob<T>&);
+template<typename T> ostream& operator<<(ostream&, const Blob<T>&);
 
 
 template<typename T> class Blob {
 
 	// 友元声明
 	friend class BlobPtr<T>;	// 用Blob的模板形参作为自己的模板形参，则友好关系被限定在用相同类型实例化的Blob与BlobPtr
-
-	// 输出运算符友元声明与定义（如果定义在外面，则会出现“友元与模板类的对应关系为多对多”的情况，虽然也可以，但感觉不太好）
-	friend ostream& operator<<(ostream& os, const Blob<T>& blob)
-	{
-		for (auto it = blob.data->cbegin(); it != blob.data->cend(); ++it)
-		{
-			os << *it << " ";
-		}
-		return os;
-	}
-	// 相等运算符支持这种写法，则可以定义在类外面
-	friend bool operator==<T>(const Blob<T>&, const Blob<T>&);
+	friend bool operator== <T>(const Blob<T>&, const Blob<T>&);
+	friend ostream& operator<< <T>(ostream&, const Blob<T>&);
 
 public:
 	typedef T value_type;
@@ -47,9 +37,9 @@ public:
 	void push_back(T&& t) { data->push_back(move(t)); }
 	void pop_back();
 	T& front();
-	//const T& front() const;
+	const T& front() const;
 	T& back();
-	//const T& back() const;
+	const T& back() const;
 	T& operator[](size_type i);
 
 private:
@@ -71,9 +61,30 @@ void Blob<T>::pop_back()
 }
 
 template<typename T>
+T& Blob<T>::front()
+{
+	check(0, "front on empty Blob");
+	return data->front();
+}
+
+template<typename T>
+const T& Blob<T>::front() const
+{
+	check(0, "front on empty Blob");
+	return data->front();
+}
+
+template<typename T>
 T& Blob<T>::back()
 {
 	check(0, "back on empty Blob");
+	return data->back();
+}
+
+template<typename T>
+const T& Blob<T>::back() const
+{
+	check(0, "front on empty Blob");
 	return data->back();
 }
 
@@ -92,16 +103,33 @@ void Blob<T>::check(size_type i, const string& msg) const
 }
 
 template<typename T>
-bool operator==<T>(const Blob<T>& lhs, const Blob<T>& rhs)
+bool operator==(const Blob<T>& lhs, const Blob<T>& rhs)
 {
 	return lhs.data == rhs.data;
 }
 
+template<typename T>
+ostream& operator<< (ostream& os, const Blob<T>& blob)
+{
+	for (auto it = blob.data->cbegin(); it != blob.data->cend(); ++it)
+	{
+		os << *it << " ";
+	}
+	return os;
+}
+
+
+// 前置声明
+template<typename T> bool operator== (const BlobPtr<T>&, const BlobPtr<T>&);
+template<typename T> bool operator< (const BlobPtr<T>&, const BlobPtr<T>&);
 
 
 // 若试图访问一个不存在的元素，BlobPtr抛出一个异常
 template<typename T>
 class BlobPtr {
+	friend bool operator== <T>(const BlobPtr<T>&, const BlobPtr<T>&);
+	friend bool operator< <T>(const BlobPtr<T>&, const BlobPtr<T>&);
+
 public:
 	BlobPtr() : curr(0) {}
 	BlobPtr(Blob<T>& a, size_t sz = 0) :
@@ -111,13 +139,15 @@ public:
 		auto p = check(curr, "dereference past end");
 		return (*p)[curr];
 	}
-	BlobPtr& operator++();	// 前置运算符
+	// prefix
+	BlobPtr& operator++();
 	BlobPtr& operator--();
 
-	BlobPtr operator++(int);	// 后置运算符
+	// postfix
+	BlobPtr operator++(int);
 	BlobPtr operator--(int);
 
-	long count() { return wptr.use_count(); }
+	long count() const { return wptr.use_count(); }
 
 private:
 	// 若检查成功，check返回一个指向vector的shared_ptr
@@ -172,6 +202,26 @@ shared_ptr<vector<T>> BlobPtr<T>::check(size_t i, const string& msg) const
 	return ret;
 }
 
+template<typename T>
+bool operator==(const BlobPtr<T>& lhs, const BlobPtr<T>& rhs)
+{
+	if (lhs.wptr.lock() != rhs.wptr.lock())
+	{
+		throw runtime_error("ptrs to different Blobs!");
+	}
+	return lhs.curr == rhs.curr;
+}
+
+template<typename T>
+bool operator< (const BlobPtr<T>& lhs, const BlobPtr<T>& rhs)
+{
+	if (lhs.wptr.lock() != rhs.wptr.lock())
+	{
+		throw runtime_error("ptrs to different Blobs!");
+	}
+	return lhs.curr < rhs.curr;
+}
+
 
 typedef Blob<string> StrBlob;
 
@@ -189,6 +239,7 @@ void test()
 
 	BlobPtr<string> bp(names);
 	cout << *bp << endl;
+	cout << *(++bp) << endl;
 	cout << bp.count() << endl;
 
 	StrBlob flowers = { "rose", "sfasdf" };

@@ -145,6 +145,7 @@
     <ClInclude Include="src\Ch06_Functions\variable_param_example.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\blob.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\nontype_parameter.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\screen.h" />
     <ClInclude Include="src\util.h" />
   </ItemGroup>
   <ItemGroup>
