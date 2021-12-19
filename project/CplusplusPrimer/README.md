@@ -9,6 +9,6 @@
 ## Ch16 Templates and Generic Programming
 
 - 非类型模板参数的应用： 编译期获取数组长度 `nontype_parameter.h`
-- 类模板和友元、运算符重载
+- 类模板和友元、运算符重载 `blob.h`、`vec.h`、`screen.h`
 
 
