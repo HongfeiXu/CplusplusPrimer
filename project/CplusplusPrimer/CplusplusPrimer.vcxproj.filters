@@ -11,6 +11,9 @@
     <Filter Include="src\Ch06_Functions">
       <UniqueIdentifier>{dc4d2af9-a24a-4d75-bf4d-3bfcf1111d01}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Ch14_Overloaded_Operations_and_Conversions">
+      <UniqueIdentifier>{5023f5c7-0df3-430e-800a-391ee32ce911}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -34,6 +37,9 @@
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
     </ClInclude>
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\vec.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\DebugDelete.h">
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
     </ClInclude>
   </ItemGroup>

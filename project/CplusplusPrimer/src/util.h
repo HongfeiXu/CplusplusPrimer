@@ -19,5 +19,14 @@ void print_array(const T(&arr)[N])
 	copy(std::cbegin(arr), std::cend(arr), ostream_iterator<T>(cout, " "));
 }
 
+template<typename T>
+ostream& print_container(const T& container, ostream& os=cout)
+{
+	for (auto curr = container.cbegin(); curr != container.cend(); ++curr)
+	{
+		os << *curr << " ";
+	}
+	return os;
+}
 
 

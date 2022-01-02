@@ -1,14 +1,16 @@
-﻿#include "Ch16_Templates_and_Generic_Programming/vec.h"
-
-#include <iostream>
-#include <string>
+﻿#include <vector>
+#include "Ch16_Templates_and_Generic_Programming/DebugDelete.h"
 
 using namespace std;
 
 
+class NoDefault {
+	NoDefault() = delete;
+};
+
 int main()
 {
-	test();
+	vector<NoDefault> vt;
 
 	return 0;
 }
