@@ -1,16 +1,14 @@
 ﻿#include <vector>
-#include "Ch16_Templates_and_Generic_Programming/DebugDelete.h"
+#include <iostream>
+#include "util.h"
 
 using namespace std;
 
 
-class NoDefault {
-	NoDefault() = delete;
-};
 
 int main()
 {
-	vector<NoDefault> vt;
+	print(cout, 1, "hello", "world");
 
 	return 0;
 }

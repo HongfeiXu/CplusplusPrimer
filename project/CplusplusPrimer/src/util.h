@@ -12,7 +12,6 @@ void print_vector(const vector<T> &vec)
 }
 
 
-
 template<typename T, unsigned N>
 void print_array(const T(&arr)[N])
 {
@@ -27,6 +26,19 @@ ostream& print_container(const T& container, ostream& os=cout)
 		os << *curr << " ";
 	}
 	return os;
+}
+
+template<typename T>
+ostream& print(ostream& os, const T& t)
+{
+	return os << t;
+}
+
+template<typename T, typename... Args>
+ostream& print(ostream& os, const T& t, const Args&... rest)
+{
+	os << t << ", ";
+	return print(os, rest...);
 }
 
 
