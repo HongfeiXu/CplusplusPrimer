@@ -143,6 +143,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\StrVec.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,7 +151,11 @@
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\blob.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\DebugDelete.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\nontype_parameter.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\StrVec.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tail_return.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\variadic_template.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\screen.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tempate_overload.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\vec.h" />
     <ClInclude Include="src\util.h" />
   </ItemGroup>

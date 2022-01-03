@@ -1,14 +1,14 @@
-﻿#include <vector>
-#include <iostream>
-#include "util.h"
+﻿#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <type_traits>
 
 using namespace std;
 
 
-
 int main()
 {
-	print(cout, 1, "hello", "world");
 
 	return 0;
 }

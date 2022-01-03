@@ -35,10 +35,10 @@ ostream& print(ostream& os, const T& t)
 }
 
 template<typename T, typename... Args>
-ostream& print(ostream& os, const T& t, const Args&... rest)
+ostream& print(ostream& os, const T& t, const Args&... rest)	// 扩展Args，生成函数参数列表
 {
 	os << t << ", ";
-	return print(os, rest...);
+	return print(os, rest...);	// 扩展rest，生成实参列表
 }
 
 

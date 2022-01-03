@@ -19,6 +19,9 @@
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\StrVec.cpp">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\nontype_parameter.h">
@@ -40,6 +43,18 @@
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
     </ClInclude>
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\DebugDelete.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\variadic_template.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tempate_overload.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\StrVec.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tail_return.h">
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
     </ClInclude>
   </ItemGroup>
