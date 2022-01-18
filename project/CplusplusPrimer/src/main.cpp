@@ -1,7 +1,7 @@
-﻿#include <iostream>
+﻿#include "Imp\hex_cache.h"
 
 int main()
 {
-	std::cout << "hello world" << std::endl;
+	test_simple_cache();
 	return 0;
 }
