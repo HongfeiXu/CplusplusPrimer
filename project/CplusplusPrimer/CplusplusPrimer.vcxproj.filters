@@ -60,7 +60,7 @@
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tail_return.h">
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
     </ClInclude>
-    <ClInclude Include="src\Imp\hex_cache.h">
+    <ClInclude Include="src\Imp\simple_cache.h">
       <Filter>src\Imp</Filter>
     </ClInclude>
   </ItemGroup>

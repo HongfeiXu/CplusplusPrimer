@@ -157,7 +157,7 @@
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\screen.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tempate_overload.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\vec.h" />
-    <ClInclude Include="src\Imp\hex_cache.h" />
+    <ClInclude Include="src\Imp\simple_cache.h" />
     <ClInclude Include="src\util.h" />
   </ItemGroup>
   <ItemGroup>
