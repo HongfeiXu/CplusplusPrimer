@@ -52,31 +52,6 @@ public:
 			throw std::range_error("LRUCache Error: Too big to put");
 		}
 
-		size_t remain_size = _max_size - weight;
-		if (_lru_mode)
-		{
-			// 从尾向前缩减 cache 的到合法尺寸
-			while (_curr_size > remain_size)
-			{
-				auto last = _cache_items_list.end();
-				last--;
-				_curr_size -= last->second.second;
-				_cache_items_map.erase(last->first);
-				_cache_items_list.pop_back();
-			}
-		}
-		else
-		{
-			// 从头向后缩减 cache 的到合法尺寸
-			while (_curr_size > remain_size)
-			{
-				auto beg = _cache_items_list.begin();
-				_curr_size -= beg->second.second;
-				_cache_items_map.erase(beg->first);
-				_cache_items_list.pop_front();
-			}
-		}
-
 		auto it = _cache_items_map.find(key);
 
 		// key 已经存在，则先删除
@@ -100,6 +75,30 @@ public:
 			_cache_items_list.push_back(key_value_pair_t(key, std::make_pair(value, weight)));
 			_cache_items_map[key] = std::prev(_cache_items_list.end());
 			_curr_size += weight;
+		}
+
+		if (_lru_mode)
+		{
+			// 从尾向前缩减 cache 的到合法尺寸
+			while (_curr_size > _max_size)
+			{
+				auto last = _cache_items_list.end();
+				last--;
+				_curr_size -= last->second.second;
+				_cache_items_map.erase(last->first);
+				_cache_items_list.pop_back();
+			}
+		}
+		else
+		{
+			// 从头向后缩减 cache 的到合法尺寸
+			while (_curr_size > _max_size)
+			{
+				auto beg = _cache_items_list.begin();
+				_curr_size -= beg->second.second;
+				_cache_items_map.erase(beg->first);
+				_cache_items_list.pop_front();
+			}
 		}
 	}
 
@@ -177,6 +176,9 @@ void test_simple_cache()
 	fifo.put(std::string("money"), 123, 1);
 	fifo.debug_print();
 	fifo.put(std::string("book"), 10, 2);
+	fifo.debug_print();
+
+	fifo.put(std::string("age"), 10, 2);
 	fifo.debug_print();
 
 	fifo.get(std::string("money"));
