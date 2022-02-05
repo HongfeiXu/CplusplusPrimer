@@ -53,7 +53,7 @@ void test()
 	float fb = 1.3f;
 	cout << compare(fa, fb) << endl;
 
-	cout << compare("hi", "mom") << endl;	// 传入的必须是常量表达式
+	cout << compare("hi", "mom") << endl;	// 传入的必须是常量表达式, emm g++编译这里会出错
 
 	int arr[] = { 1,2,3,4,5,6 };
 	print(arr);
