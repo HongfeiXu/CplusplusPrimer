@@ -11,7 +11,6 @@
 
 using namespace std;
 
-
 template<typename T>
 string debug_rep(const T& t)
 {
@@ -20,13 +19,15 @@ string debug_rep(const T& t)
 	return ret.str();
 }
 
+// 打印指针的debug_rep版本
+// 注意：此函数不能用于char*
 template<typename T>
 string debug_rep(T* p)
 {
 	ostringstream ret;
-	ret << "pointer: " << p;
+	ret << "pointer: " << p;	// 打印指针本身的值
 	if (p)
-		ret << " " << debug_rep(*p);
+		ret << " " << debug_rep(*p);	// 打印p指向的值
 	else
 		ret << "null pointer";
 	return ret.str();

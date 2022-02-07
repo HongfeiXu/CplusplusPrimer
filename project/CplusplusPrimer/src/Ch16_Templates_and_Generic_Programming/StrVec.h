@@ -29,6 +29,15 @@ public:
 	~StrVec();
 	StrVec& operator= (const StrVec &rhs);
 	StrVec& operator= (StrVec &&rhs) noexcept;
+    StrVec& operator= (std::initializer_list<std::string>);
+    std::string& operator[] (std::size_t n)
+    {
+        return elements[n];
+    }
+    const std::string& operator[] (std::size_t n) const
+    {
+        return elements[n];
+    }
 
 	void push_back(const std::string& s);
 	void push_back(std::string&& s);		// 右值引用参数的 push_back
@@ -63,4 +72,4 @@ void StrVec::emplace_back(Args&&...args)
 	alloc.construct(first_free++, std::forward<Args>(args)...);
 }
 
-void test();
+void test_str_vec();

@@ -58,7 +58,7 @@ inline double Sales_data::avg_price() const		// 将此成员函数指定为 内联函数。
 }
 // declarations for nonmember parts of the Sales_data interface.
 ostream &operator<<(ostream &os, const Sales_data &item);
-istream &operator>>(istream &is, Sales_data &item);
+istream &operator >> (istream &is, Sales_data &item);
 Sales_data operator+(const Sales_data &lhs, const Sales_data &rhs);
 bool compareIsbn(const Sales_data& lhs, const Sales_data& rhs);
 

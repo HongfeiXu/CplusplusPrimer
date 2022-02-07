@@ -1,5 +1,10 @@
 #pragma once
 
+/*
+练习14.6
+为你的 Sales_data 类定义输出运算符。
+*/
+
 #include <string>
 #include <iostream>
 #include <functional>
