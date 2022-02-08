@@ -57,6 +57,15 @@ StrVec &StrVec::operator=(StrVec &&rhs) noexcept
 	return *this;
 }
 
+StrVec& StrVec::operator=(std::initializer_list<std::string> il)
+{
+	auto data = alloc_n_copy(il.begin(), il.end());
+	free();
+	elements = data.first;
+	first_free = cap = data.second;
+	return *this;
+}
+
 void StrVec::push_back(const std::string& s)
 {
 	//std::cout << "push_back(const string&)" << std::endl;
@@ -176,13 +185,16 @@ std::ostream& operator<<(std::ostream& out, const StrVec& str_vec)
     return out;
 }
 
-void test()
+void test_str_vec()
 {
 	StrVec vec = { "hello", "world" };
     vec.push_back("fuck");
     vec.emplace_back(3, 'A');
     vec.emplace_back("is dream");
 	std::cout << vec << std::endl;
+
+    vec = { "winter", "olympic" };
+    std::cout << vec << std::endl;
 }
 
 /*

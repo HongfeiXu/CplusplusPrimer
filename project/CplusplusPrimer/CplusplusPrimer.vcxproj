@@ -143,14 +143,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\book.cpp" />
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.cpp" />
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\String.cpp" />
+    <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\Sales_data.cpp" />
     <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\StrVec.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Ch06_Functions\variable_param_example.h" />
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\book.h" />
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.h" />
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\String.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\blob.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\DebugDelete.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\nontype_parameter.h" />
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\Sales_data.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\StrVec.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tail_return.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\variadic_template.h" />

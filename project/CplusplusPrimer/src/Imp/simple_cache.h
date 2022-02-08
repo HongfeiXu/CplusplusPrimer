@@ -24,7 +24,7 @@ public:
 	const value_t& get(const key_t& key)
 	{
 		auto it = _cache_items_map.find(key);
-		// Î´ÕÒµ½£¬Å×³öÒì³£
+		// æœªæ‰¾åˆ°ï¼ŒæŠ›å‡ºå¼‚å¸¸
 		if (it == _cache_items_map.end())
 		{
 			throw std::range_error("LRUCache Error: There is no such key of cache.");
@@ -33,7 +33,7 @@ public:
 		{
 			if (_lru_mode)
 			{
-				// ÒÆ¶¯µ½×îÇ°Ãæ
+				// ç§»åŠ¨åˆ°æœ€å‰é¢
 				_cache_items_list.splice(_cache_items_list.begin(), _cache_items_list, it->second);
 			}
 			return it->second->second.first;
@@ -42,13 +42,13 @@ public:
 
 	void put(const key_t& key, const value_t& value, size_t weight = 1)
 	{
-		// ÔªËØ´óÐ¡³¬¹ýcacheµÄ_max_size£¬Å×³öÒì³£
+		// å…ƒç´ å¤§å°è¶…è¿‡cacheçš„_max_sizeï¼ŒæŠ›å‡ºå¼‚å¸¸
 		if (weight > _max_size)
 		{
 			throw std::range_error("LRUCache Error: Too big to put.");
 		}
 
-		// ·ÅÈëÔªËØ
+		// æ”¾å…¥å…ƒç´ 
 		auto it = _cache_items_map.find(key);
 		if (it != _cache_items_map.end())
 		{
@@ -59,23 +59,23 @@ public:
 
 		if (_lru_mode)
 		{
-			// Ìí¼ÓÔªËØµ½×îÇ°Ãæ
+			// æ·»åŠ å…ƒç´ åˆ°æœ€å‰é¢
 			_cache_items_list.push_front(key_value_pair_t(key, std::make_pair(value, weight)));
 			_cache_items_map[key] = _cache_items_list.begin();
 			_curr_size += weight;
 		}
 		else
 		{
-			// Ìí¼ÓÔªËØµ½×îºóÃæ
+			// æ·»åŠ å…ƒç´ åˆ°æœ€åŽé¢
 			_cache_items_list.push_back(key_value_pair_t(key, std::make_pair(value, weight)));
 			_cache_items_map[key] = std::prev(_cache_items_list.end());
 			_curr_size += weight;
 		}
 
-		// ³¬³öÔòËõ¼õ
+		// è¶…å‡ºåˆ™ç¼©å‡
 		if (_lru_mode)
 		{
-			// ´ÓÎ²ÏòÇ°Ëõ¼õ cache µÄµ½ºÏ·¨³ß´ç
+			// ä»Žå°¾å‘å‰ç¼©å‡ cache çš„åˆ°åˆæ³•å°ºå¯¸
 			while (_curr_size > _max_size)
 			{
 				auto last = _cache_items_list.end();
@@ -87,7 +87,7 @@ public:
 		}
 		else
 		{
-			// ´ÓÍ·ÏòºóËõ¼õ cache µÄµ½ºÏ·¨³ß´ç
+			// ä»Žå¤´å‘åŽç¼©å‡ cache çš„åˆ°åˆæ³•å°ºå¯¸
 			while (_curr_size > _max_size)
 			{
 				auto beg = _cache_items_list.begin();

@@ -17,6 +17,9 @@
     <Filter Include="src\Imp">
       <UniqueIdentifier>{9ae4674e-afc1-4e38-97b6-d165202556e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Ch16_Templates_and_Generic_Programming\template specialization">
+      <UniqueIdentifier>{79e318af-75cd-49eb-b5d8-57655a187cfa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -24,6 +27,18 @@
     </ClCompile>
     <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\StrVec.cpp">
       <Filter>src\Ch16_Templates_and_Generic_Programming</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\Sales_data.cpp">
+      <Filter>src\Ch16_Templates_and_Generic_Programming\template specialization</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\book.cpp">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\String.cpp">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.cpp">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,6 +77,18 @@
     </ClInclude>
     <ClInclude Include="src\Imp\simple_cache.h">
       <Filter>src\Imp</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\Sales_data.h">
+      <Filter>src\Ch16_Templates_and_Generic_Programming\template specialization</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\book.h">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\String.h">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.h">
+      <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
