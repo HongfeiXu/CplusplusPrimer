@@ -43,7 +43,7 @@
     <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.cpp">
       <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
     </ClCompile>
-    <ClCompile Include="src\EffectiveCpp\Test.cpp">
+    <ClCompile Include="src\EffectiveCpp\Item2.cpp">
       <Filter>src\EffectiveCpp</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,7 +96,7 @@
     <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.h">
       <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
     </ClInclude>
-    <ClInclude Include="src\EffectiveCpp\Test.h">
+    <ClInclude Include="src\EffectiveCpp\Item2.h">
       <Filter>src\EffectiveCpp</Filter>
     </ClInclude>
   </ItemGroup>
