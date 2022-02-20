@@ -20,6 +20,9 @@
     <Filter Include="src\Ch16_Templates_and_Generic_Programming\template specialization">
       <UniqueIdentifier>{79e318af-75cd-49eb-b5d8-57655a187cfa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EffectiveCpp">
+      <UniqueIdentifier>{ad65658d-299c-4a65-9b07-4025fdf3ffd4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -39,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.cpp">
       <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EffectiveCpp\Test.cpp">
+      <Filter>src\EffectiveCpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +95,9 @@
     </ClInclude>
     <ClInclude Include="src\Ch14_Overload_Operations_and_Conversions\StrBlob.h">
       <Filter>src\Ch14_Overloaded_Operations_and_Conversions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EffectiveCpp\Test.h">
+      <Filter>src\EffectiveCpp</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

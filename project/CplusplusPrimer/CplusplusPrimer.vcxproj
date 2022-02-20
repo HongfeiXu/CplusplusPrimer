@@ -148,6 +148,7 @@
     <ClCompile Include="src\Ch14_Overload_Operations_and_Conversions\String.cpp" />
     <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\Sales_data.cpp" />
     <ClCompile Include="src\Ch16_Templates_and_Generic_Programming\StrVec.cpp" />
+    <ClCompile Include="src\EffectiveCpp\Test.cpp" />
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -165,6 +166,7 @@
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\screen.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\tempate_overload.h" />
     <ClInclude Include="src\Ch16_Templates_and_Generic_Programming\vec.h" />
+    <ClInclude Include="src\EffectiveCpp\Test.h" />
     <ClInclude Include="src\Imp\simple_cache.h" />
     <ClInclude Include="src\util.h" />
   </ItemGroup>
