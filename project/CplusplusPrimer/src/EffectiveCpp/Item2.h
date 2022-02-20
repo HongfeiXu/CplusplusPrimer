@@ -1,5 +1,7 @@
 #pragma once
 
+// Item2: Prefer consts, enums and inlines to #defines.
+
 class GamePlayer {
 private:
 	static const int NumTurns = 5; // 常量声明式，in-class 初值设定，只允许对整数常量进行
